@@ -1,4 +1,3 @@
-// src/app/features/password/components/password-detail/password-detail.component.ts
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
@@ -49,7 +48,6 @@ export class PasswordDetailComponent {
 
   copyToClipboard(text: string): void {
     navigator.clipboard.writeText(text).then(() => {
-      // Could add a toast notification here
       console.log('Copied to clipboard');
     });
   }

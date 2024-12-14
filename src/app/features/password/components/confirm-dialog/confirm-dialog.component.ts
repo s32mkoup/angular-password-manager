@@ -1,4 +1,3 @@
-// src/app/features/password/components/confirm-dialog/confirm-dialog.component.ts
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
