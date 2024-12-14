@@ -44,6 +44,7 @@ export class PasswordListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Load passwords when the component initializes
     this.loadPasswords();
   }
 
@@ -51,10 +52,12 @@ export class PasswordListComponent implements OnInit {
     this.loading = true;
     return this.passwordService.getAllPasswords().pipe(
       tap(passwords => {
+        // Handle successful password retrieval
         this.loading = false;
         this.error = null;
       }),
       catchError(error => {
+        // Handle error in password retrieval
         this.loading = false;
         this.error = error.message;
         return [];
@@ -63,10 +66,12 @@ export class PasswordListComponent implements OnInit {
   }
 
   loadPasswords(): void {
+    // Load passwords and assign to observable
     this.passwords$ = this.getPasswordsWithDebug();
   }
 
   searchPasswords(event: KeyboardEvent): void {
+    // Search passwords based on user input
     const query = (event.target as HTMLInputElement).value;
     this.passwords$ = this.passwordService.searchPasswords(query).pipe(
       tap(results => console.log('Search results:', results))
@@ -74,6 +79,7 @@ export class PasswordListComponent implements OnInit {
   }
 
   viewPassword(password: PasswordItem): void {
+    // Open dialog to view password details
     this.dialog.open(PasswordDetailComponent, {
       data: { password },
       width: '600px',
@@ -83,6 +89,7 @@ export class PasswordListComponent implements OnInit {
   }
 
   editPassword(password: PasswordItem): void {
+    // Open dialog to edit password
     const dialogRef = this.dialog.open(PasswordFormComponent, {
       data: { password: password },
       width: '600px',
@@ -91,6 +98,7 @@ export class PasswordListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      // Reload passwords if edit was successful
       if (result) {
         this.loadPasswords();
       }
@@ -98,6 +106,7 @@ export class PasswordListComponent implements OnInit {
   }
 
   deletePassword(password: PasswordItem): void {
+    // Open confirmation dialog to delete password
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
         title: 'Delete Password',
@@ -106,6 +115,7 @@ export class PasswordListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      // Delete password if confirmed
       if (result) {
         this.passwordService.deletePassword(password.id!).subscribe({
           next: () => {
@@ -120,11 +130,13 @@ export class PasswordListComponent implements OnInit {
   }
 
   openAddDialog(): void {
+    // Open dialog to add a new password
     const dialogRef = this.dialog.open(PasswordFormComponent, {
       width: '500px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      // Reload passwords if add was successful
       if (result) {
         this.loadPasswords();
       }
