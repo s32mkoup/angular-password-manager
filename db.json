@@ -1,0 +1,51 @@
+{
+  "passwords": [
+    {
+      "id": "1",
+      "category": "work",
+      "app": "outlook",
+      "userName": "testuser@mytest.com",
+      "encryptedPassword": "TXlQYXNzd29yZEAxMjM="
+    },
+    {
+      "id": "2",
+      "category": "school",
+      "app": "messenger",
+      "userName": "testuser@mytest.com",
+      "encryptedPassword": "TmV3UGFzc3dvcmRAMTI=",
+      "updatedAt": "2024-12-14T02:42:04.343Z"
+    },
+    {
+      "id": "3",
+      "category": "personal",
+      "app": "gmail",
+      "userName": "personal@gmail.com",
+      "encryptedPassword": "R21haWxAcGFzc3dvcmQxMjM=",
+      "updatedAt": "2024-12-14T02:45:00.000Z"
+    },
+    {
+      "id": "4",
+      "category": "work",
+      "app": "slack",
+      "userName": "user@company.com",
+      "encryptedPassword": "U2xhY2tAd29ya3BsYWNlMTIz",
+      "updatedAt": "2024-12-14T02:46:00.000Z"
+    },
+    {
+      "id": "5",
+      "category": "finance",
+      "app": "paypal",
+      "userName": "finance@mytest.com",
+      "encryptedPassword": "UGF5cGFsQGZpbmFuY2UxMjM=",
+      "updatedAt": "2024-12-14T02:47:00.000Z"
+    },
+    {
+      "id": "6",
+      "category": "social",
+      "app": "twitter",
+      "userName": "socialuser@test.com",
+      "encryptedPassword": "VHdpdHRlckBzb2NpYWwxMjM=",
+      "updatedAt": "2024-12-14T02:48:00.000Z"
+    }
+  ]
+}
