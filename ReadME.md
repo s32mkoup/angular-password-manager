@@ -16,7 +16,7 @@ The Password Manager is an Angular application designed to securely store and ma
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/password-manager.git
+    git clone https://github.com/your-username/angular-password-manager.git
     cd password-manager
     ```
 
